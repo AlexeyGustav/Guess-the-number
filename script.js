@@ -26,10 +26,15 @@ document.querySelector('.check').addEventListener('click', function() {
         document.querySelector('body').style.backgroundColor = 'rgb(9, 250, 21)';
         document.querySelector('.question').style.width = '50rem'
 
+        document.querySelector('.wrapper__cur').remove()
+        document.querySelector('.wrapper__win').style.display = 'block'
+
         if(score > hightscore) {
             hightscore = score;
             document.querySelector('.highscore').textContent = hightscore
         }
+
+
 // to hight
     } else if (quessingNumber !== secretNumber) {
         document.querySelector('.guess-message').textContent = quessingNumber > secretNumber ? 'Слишком много!' : 'Слишком мало!';
