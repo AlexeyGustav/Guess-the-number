@@ -5,8 +5,6 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let hightscore = 0;
 
-let forBasta = document.querySelector('.wrapper__cur');
-let createImgForBasta = document.querySelector('.wrapper')
 
 function displayGuessMessage(massage) {
     document.querySelector('.guess-message').textContent = massage;
@@ -23,8 +21,7 @@ document.querySelector('.check').addEventListener('click', function() {
 // игрок выиграл
 
     } else if(quessingNumber === secretNumber) {
-        // document.querySelector('.guess-message').textContent = '!!! ПРАВИЛЬНО !!!'
-        displayGuessMessage('Ты прав! Но сегодня ты не покуришь!')
+        document.querySelector('.guess-message').textContent = '!!! ПРАВИЛЬНО !!!'
         document.querySelector('.question').textContent = secretNumber;
         document.querySelector('body').style.backgroundColor = 'rgb(9, 250, 21)';
         document.querySelector('.question').style.width = '50rem'
@@ -86,14 +83,4 @@ document.querySelector('.again').addEventListener('click', function() {
     document.querySelector('.question').textContent = '???';
     document.querySelector('.number-input').value = '';
     document.querySelector('body').style.backgroundColor = 'rgb(0, 0, 0)';
-
-    // для басты:
-    document.querySelector('.wrapper__win').style.display = 'none'
-    const img = document.createElement('img');
-    console.log('document.createElement', img)
-    img.className = 'wrapper__cur';
-    img.src  = './Basta.png'
-    createImgForBasta.append(img)
-    console.log('createImgForBasta.append', createImgForBasta)
-    // document.querySelector('.wrapper__cur').style.display = 'block'
 })
